@@ -53,16 +53,9 @@ public class BatteryMeterView extends CardView {
     Intent batteryStatus;
     int status;
 
-<<<<<<< HEAD
-    private int mLevel;
-
-    public BatteryMeterView(Context context) {
-        this(context, null, 0);
-=======
     public BatteryMeterView(@NonNull Context context) {
         super(context);
         init(context);
->>>>>>> 9bfc19dfc0... Battery : Redesign BatteryMeterView
     }
 
     public BatteryMeterView(@NonNull Context context, @Nullable AttributeSet attrs) {
@@ -119,13 +112,6 @@ public class BatteryMeterView extends CardView {
         }
     }
 
-<<<<<<< HEAD
-    public void setBatteryLevel(int level) {
-        mLevel = level;
-        mDrawable.setBatteryLevel(level);
-        if (level < mDrawable.getCriticalLevel()) {
-            mDrawable.setBatteryColorFilter(mErrorColorFilter);
-=======
     public boolean getCharging() {
         return status == BatteryManager.BATTERY_STATUS_CHARGING ||
                 status == BatteryManager.BATTERY_STATUS_FULL;
@@ -134,7 +120,6 @@ public class BatteryMeterView extends CardView {
     public void setCharging(boolean status) {
         if (status) {
             this.status = BatteryManager.BATTERY_STATUS_CHARGING;
->>>>>>> 9bfc19dfc0... Battery : Redesign BatteryMeterView
         } else {
             this.status = BatteryManager.BATTERY_STATUS_DISCHARGING;
         }
@@ -147,11 +132,7 @@ public class BatteryMeterView extends CardView {
     }
 
     public int getBatteryLevel() {
-<<<<<<< HEAD
-        return mLevel;
-=======
         return waveView.getProgress() <= 0 ? waveView.getProgress() : 10;
->>>>>>> 9bfc19dfc0... Battery : Redesign BatteryMeterView
     }
 
     private boolean hurtEyes(int color) {
